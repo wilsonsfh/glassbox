@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-11-25T23:34:00+08:00",
+  "scope": "Q6 exact public-root cross-site document navigation HTTP guard",
+  "environment": "Linux cloud sandbox, Node 22, loopback port 5816",
+  "implemented": true,
+  "pre_fix_reproduced": {
+    "localhost_plain_root": 200,
+    "127.0.0.1_plain_root": 200,
+    "localhost_cross_site_document_navigation": 403,
+    "127.0.0.1_cross_site_document_navigation": 403,
+    "regression_expected_failure": "403 !== 200"
+  },
+  "post_fix_verified": {
+    "node_tests_passed": 31,
+    "node_tests_failed": 0,
+    "node_tests_skipped": 0,
+    "localhost_cross_site_root_navigation": 200,
+    "127.0.0.1_cross_site_root_navigation": 200,
+    "root_and_all_public_assets_get_head_both_hostnames": "PASS",
+    "cross_site_fetch_embed_subresource_health_api_rejection": "PASS",
+    "host_origin_forwarded_host_rejection": "PASS",
+    "websocket_foreign_missing_alias_origin_rejection": "PASS",
+    "websocket_guard_modified": false,
+    "cors_bypass_added": false,
+    "crypto_changed": false
+  },
+  "focused_browser": {
+    "status": "BLOCKED_BROWSER_LOCK",
+    "chromium_launched": false,
+    "lock": "/tmp/chrome.lock",
+    "lock_wait_seconds": [120, 240, 180],
+    "final_exit": 1,
+    "screenshots_created": false,
+    "harness_syntax": "PASS",
+    "retry_command": "flock -x -w 120 /tmp/chrome.lock python3 tests/host-navigation-browser.py"
+  },
+  "mac_resolution": "UNVERIFIED",
+  "restart_required": true,
+  "target_restart_command": "node server.mjs --port 4816",
+  "restart_effect": "Existing in-memory relay sessions end; use a fresh conversation",
+  "owned_test_processes_stopped": true,
+  "test_port_5816_free_at_handoff": true,
+  "evidence": [
+    "evidence/host-navigation-before.txt",
+    "evidence/host-navigation-regression-before.tap",
+    "evidence/host-navigation-node-tests.tap",
+    "evidence/host-navigation-after.txt",
+    "evidence/host-navigation-browser.log"
+  ]
+}

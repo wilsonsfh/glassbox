@@ -1,0 +1,124 @@
+TAP version 13
+# Subtest: independent Cacophony known-answer vector: both flights, payloads, full hash and directions
+ok 1 - independent Cacophony known-answer vector: both flights, payloads, full hash and directions
+  ---
+  duration_ms: 81.744896
+  type: 'test'
+  ...
+# Subtest: known Noise transport nonce wrap is reproduced and transport is forbidden in app source
+ok 2 - known Noise transport nonce wrap is reproduced and transport is forbidden in app source
+  ---
+  duration_ms: 1.532384
+  type: 'test'
+  ...
+# Subtest: invite is exactly 32 random bytes, canonical base64url, independent route and PSK
+ok 3 - invite is exactly 32 random bytes, canonical base64url, independent route and PSK
+  ---
+  duration_ms: 11.351507
+  type: 'test'
+  ...
+# Subtest: no pre-verification send; both full fingerprints must be compared
+ok 4 - no pre-verification send; both full fingerprints must be compared
+  ---
+  duration_ms: 25.632968
+  type: 'test'
+  ...
+# Subtest: bidirectional unicode, text-only hostile markup and 256-byte size buckets
+ok 5 - bidirectional unicode, text-only hostile markup and 256-byte size buckets
+  ---
+  duration_ms: 17.332035
+  type: 'test'
+  ...
+# Subtest: wrong invite PSK fails even when routed into the expected room
+ok 6 - wrong invite PSK fails even when routed into the expected room
+  ---
+  duration_ms: 7.255947
+  type: 'test'
+  ...
+# Subtest: wrong prologue / room fails authenticated handshake
+ok 7 - wrong prologue / room fails authenticated handshake
+  ---
+  duration_ms: 8.720353
+  type: 'test'
+  ...
+# Subtest: tamper fails closed and emits no plaintext
+ok 8 - tamper fails closed and emits no plaintext
+  ---
+  duration_ms: 17.294575
+  type: 'test'
+  ...
+# Subtest: replay is rejected before a duplicate is displayed
+ok 9 - replay is rejected before a duplicate is displayed
+  ---
+  duration_ms: 20.199717
+  type: 'test'
+  ...
+# Subtest: reordering / dropped interior record is rejected
+ok 10 - reordering / dropped interior record is rejected
+  ---
+  duration_ms: 15.413589
+  type: 'test'
+  ...
+# Subtest: role confusion and reflected record fail closed
+ok 11 - role confusion and reflected record fail closed
+  ---
+  duration_ms: 14.923561
+  type: 'test'
+  ...
+# Subtest: direction cannot be relabelled to authenticate its sender own stream
+ok 12 - direction cannot be relabelled to authenticate its sender own stream
+  ---
+  duration_ms: 12.939294
+  type: 'test'
+  ...
+# Subtest: room, session, kind and extra-field substitution are blocked
+ok 13 - room, session, kind and extra-field substitution are blocked
+  ---
+  duration_ms: 58.751503
+  type: 'test'
+  ...
+# Subtest: header substitution prevents mutual key confirmation
+ok 14 - header substitution prevents mutual key confirmation
+  ---
+  duration_ms: 20.353458
+  type: 'test'
+  ...
+# Subtest: partial fingerprint or mismatch aborts rather than granting a comparison badge
+ok 15 - partial fingerprint or mismatch aborts rather than granting a comparison badge
+  ---
+  duration_ms: 29.68018
+  type: 'test'
+  ...
+# Subtest: key-change flight is blocked; reconnect gives a fresh fingerprint and resets verification
+ok 16 - key-change flight is blocked; reconnect gives a fresh fingerprint and resets verification
+  ---
+  duration_ms: 28.165446
+  type: 'test'
+  ...
+# Subtest: authenticated FINAL ends the session; no future records accepted
+ok 17 - authenticated FINAL ends the session; no future records accepted
+  ---
+  duration_ms: 13.372124
+  type: 'test'
+  ...
+# Subtest: message bounds count UTF-8 bytes and do not consume a sequence for invalid input
+ok 18 - message bounds count UTF-8 bytes and do not consume a sequence for invalid input
+  ---
+  duration_ms: 16.990908
+  type: 'test'
+  ...
+# Subtest: pinned sodium lifetime limitation is explicitly asserted
+ok 19 - pinned sodium lifetime limitation is explicitly asserted
+  ---
+  duration_ms: 0.980754
+  type: 'test'
+  ...
+1..19
+# tests 19
+# suites 0
+# pass 19
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 584.916428

@@ -1,0 +1,11 @@
+{
+  "item": "q6",
+  "status": "first_version_ready",
+  "timestamp": "2026-11-25T22:38:00+08:00",
+  "milestone": "Node crypto core and two actual encrypted WebSocket peers passing through the packaged local relay; browser/CSP runtime gate pending",
+  "changed_files": ["server.mjs", "src/core.mjs", "src/deps.mjs", "src/worker.mjs", "src/app.mjs", "src/index.html", "src/style.css", "src/favicon.svg", "scripts/build.mjs", "tests/core.test.mjs", "tests/relay.test.mjs", "tests/crypto-entry.mjs", "dist", "README.md", "THREAT-MODEL.md", "BUILD-STATUS.md", "package.json", "package-lock.json"],
+  "start_command": "node server.mjs --port 4816",
+  "tests": ["Node syntax checks passed for core, worker, app, server, bundler and relay tests", "node --test tests/core.test.mjs tests/relay.test.mjs: 26 passed, 0 failed, 0 skipped", "Independent Cacophony NNpsk0 handshake, final hash and directional vectors passed", "Actual localhost relay: two peers authenticate, compare, exchange encrypted text and close via authenticated FINAL", "npm audit after ws upgrade to 8.23.0: 0 reported vulnerabilities"],
+  "limits": ["Browser runtime and CSP gate not yet executed at this milestone", "Local loopback relay only, not WebRTC P2P or two physical devices", "Unaudited composition; older WIP sodium-javascript Noise browser backend", "libsodium-wrappers 0.8.4 has no public free; bounded worker lifetime only, no zeroization promise", "Endpoint compromise, malicious client delivery, recipient copying and relay metadata remain"],
+  "ready_for_sync": true
+}

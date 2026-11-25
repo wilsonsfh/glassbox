@@ -1,0 +1,1 @@
+2026-11-25: Refreshed both Glassbox documents in place for narrow navigation/capture-shell support, product-specific glass-box graphics, owner-reported 31/32 Node and 17/95 Chromium checks, current inventories/SRI, Wilson directives/resources/process attribution, and explicit Sandbox-only/Mac-unverified/unaudited limits.

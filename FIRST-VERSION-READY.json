@@ -1,0 +1,31 @@
+{
+  "item": "q6",
+  "status": "verified",
+  "timestamp": "2026-11-25T22:50:49+08:00",
+  "milestone": "Final local encrypted-relay slice verified with two actual browser contexts under strict CSP, full two-device fingerprint gate and Hub v3 readability refinements",
+  "changed_files": ["server.mjs", "src/core.mjs", "src/deps.mjs", "src/worker.mjs", "src/app.mjs", "src/index.html", "src/style.css", "src/favicon.svg", "scripts/build.mjs", "scripts/check.mjs", "tests/core.test.mjs", "tests/relay.test.mjs", "tests/crypto-entry.mjs", "tests/browser.py", "dist", "shots", "evidence", "README.md", "THREAT-MODEL.md", "BUILD-STATUS.md", "package.json", "package-lock.json", ".gitignore"],
+  "start_command": "node server.mjs --port 4816",
+  "restart_required": true,
+  "restart_reason": "The resident server loads UI assets and CSP hashes at startup; restart after syncing this version.",
+  "tests": [
+    "node scripts/check.mjs: 10 JavaScript syntax checks and persistence/logging/eval/unsafe-DOM/Noise-transport/inline-script bans passed",
+    "node --test tests/core.test.mjs tests/relay.test.mjs: 26 passed, 0 failed, 0 skipped",
+    "Same 26 tests passed with node_modules temporarily absent, including actual server startup and two-peer network exchange",
+    "Independent Cacophony NNpsk0 flights, payloads, final hash and directional known-answer vectors passed; known Noise transport nonce wrap reproduced and forbidden in app",
+    "flock -w 180 /tmp/chrome.lock python3 tests/browser.py: 55 assertions passed with two actual Chromium contexts under enforced CSP",
+    "Browser final run: zero page errors, zero console errors, zero CSP violations and no third-party requests",
+    "Browser verification covers pre-verification lock, both full fingerprints, bidirectional Unicode text, text-only markup, tamper/replay rejection, mismatch, clear/cancel, reduced motion, disconnect/reconnect reset and fresh fingerprint",
+    "390/820/1440 light and dark landing/conversation: no horizontal clipping; 18 unique screenshots saved",
+    "npm audit after pinned ws 8.23.0 upgrade: 0 reported vulnerabilities"
+  ],
+  "evidence": ["evidence/node-tests.tap", "evidence/portable-tests.tap", "evidence/static-checks.log", "evidence/browser-results.json", "evidence/browser-run.log", "evidence/npm-audit.json", "shots"],
+  "limits": [
+    "Application-layer E2EE over a loopback WebSocket relay only; not WebRTC P2P, TURN or a two-physical-device deployment",
+    "Unaudited Noise/secretstream composition; older WIP sodium-javascript Noise browser backend remains a maintenance/review caveat",
+    "libsodium-wrappers 0.8.4 has no public free; bounded disposable worker lifetime only, no guaranteed zeroization",
+    "Browser attack evidence uses a test-only outgoing-frame mutation/replay hook, not a shipped attack lab or independent hostile relay",
+    "Endpoint compromise, malicious client delivery, invite theft, recipient copies, relay metadata and denial of service remain",
+    "Safari/Firefox, exhaustive screen-reader/IME/200%-zoom tests, public HTTPS, signed delivery and independent audit are deferred"
+  ],
+  "ready_for_sync": true
+}

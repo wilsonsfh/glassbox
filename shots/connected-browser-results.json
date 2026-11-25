@@ -1,0 +1,155 @@
+{
+  "checks": [
+    "no moment on landing",
+    "two real workers expose identical complete fingerprints",
+    "no moment before comparisons",
+    "native capture query renders and preserves verification",
+    "one matched fingerprint never shows the moment",
+    "moment appears with both fingerprints verified and live marks",
+    "polite announcement and no pointer capture",
+    "connected artwork fits 1440",
+    "connected artwork fits 390",
+    "real authenticated send works while moment is visible",
+    "moment auto-dismisses at about 1.5 seconds",
+    "moment never appears before verified live state",
+    "focus returns to chat input and dismissed artwork cannot intercept sending",
+    "moment auto-dismisses at about 1.5 seconds",
+    "moment never appears before verified live state",
+    "focus returns to chat input and dismissed artwork cannot intercept sending",
+    "ordinary updates do not replay the once-per-session moment",
+    "no moment on landing",
+    "two real workers expose identical complete fingerprints",
+    "no moment before comparisons",
+    "one matched fingerprint never shows the moment",
+    "moment appears with both fingerprints verified and live marks",
+    "polite announcement and no pointer capture",
+    "reduced motion is a static card without any animation or transform",
+    "Escape dismisses and restores input focus",
+    "reduced-motion card still lasts 1.5 seconds",
+    "no moment on landing",
+    "two real workers expose identical complete fingerprints",
+    "no moment before comparisons",
+    "one matched fingerprint never shows the moment",
+    "moment appears with both fingerprints verified and live marks",
+    "polite announcement and no pointer capture",
+    "click dismisses on both widths without a modal or focus trap",
+    "no moment on landing",
+    "two real workers expose identical complete fingerprints",
+    "no moment before comparisons",
+    "rejected fingerprint never shows connected artwork",
+    "zero page errors",
+    "zero console errors",
+    "zero CSP violations"
+  ],
+  "page_errors": [],
+  "console_errors": [],
+  "csp_violations": [],
+  "moments": [
+    [
+      {
+        "visible": true,
+        "time": 1634.5,
+        "local": "Compared here",
+        "remote": "Comparison received",
+        "live": "live"
+      },
+      {
+        "visible": false,
+        "time": 3134.7999999998137,
+        "local": "Compared here",
+        "remote": "Comparison received",
+        "live": "live"
+      }
+    ],
+    [
+      {
+        "visible": true,
+        "time": 899.4000000003725,
+        "local": "Compared here",
+        "remote": "Comparison received",
+        "live": "live"
+      },
+      {
+        "visible": false,
+        "time": 2399.800000000745,
+        "local": "Compared here",
+        "remote": "Comparison received",
+        "live": "live"
+      }
+    ],
+    [
+      {
+        "visible": true,
+        "time": 1441,
+        "local": "Compared here",
+        "remote": "Comparison received",
+        "live": "live"
+      },
+      {
+        "visible": false,
+        "time": 1514.4000000003725,
+        "local": "Compared here",
+        "remote": "Comparison received",
+        "live": "live"
+      }
+    ],
+    [
+      {
+        "visible": true,
+        "time": 781.5999999996275,
+        "local": "Compared here",
+        "remote": "Comparison received",
+        "live": "live"
+      },
+      {
+        "visible": false,
+        "time": 2282,
+        "local": "Compared here",
+        "remote": "Comparison received",
+        "live": "live"
+      }
+    ],
+    [
+      {
+        "visible": true,
+        "time": 1348.5999999996275,
+        "local": "Compared here",
+        "remote": "Comparison received",
+        "live": "live"
+      },
+      {
+        "visible": false,
+        "time": 1434,
+        "local": "Compared here",
+        "remote": "Comparison received",
+        "live": "live"
+      }
+    ],
+    [
+      {
+        "visible": true,
+        "time": 781,
+        "local": "Compared here",
+        "remote": "Comparison received",
+        "live": "live"
+      },
+      {
+        "visible": false,
+        "time": 872.2999999998137,
+        "local": "Compared here",
+        "remote": "Comparison received",
+        "live": "live"
+      }
+    ],
+    [],
+    []
+  ],
+  "screenshots": [
+    "shots/connected-moment-1440.png",
+    "shots/connected-moment-390.png"
+  ],
+  "status": "passed",
+  "server_stopped": true,
+  "server_log": "Glassbox prototype \u2014 http://127.0.0.1:5826 \u2014 local relay only",
+  "server_errors": ""
+}

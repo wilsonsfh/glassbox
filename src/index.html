@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Glassbox is a local, unaudited encrypted-chat prototype. Compare a full session fingerprint before exchanging text over a relay.">
+  <title>Glassbox — a line for two</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css" integrity="CSS_INTEGRITY" crossorigin="anonymous">
+  <script defer src="/app.js" integrity="APP_INTEGRITY" crossorigin="anonymous"></script>
+</head>
+<body>
+<header class="masthead"><a href="/" class="wordmark" aria-label="Glassbox home"><svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 16L23 7L40 15L25 24L8 16L9 34L25 43L40 33L40 15M25 24L25 43M9 34L23 25L40 33M23 7L23 25"/><path class="mark-conversation" d="M13 22L19 25L19 30L16 28L13 29ZM29 23L35 20L35 25L32 27L29 26M20 31Q25 34 29 29"/></svg><span class="brand-word">glassbox</span></a><span class="eyebrow prototype-label">LOCAL PROTOTYPE</span></header>
+<main>
+  <section id="home" class="stage home" aria-labelledby="home-title">
+    <div class="home-copy"><p class="kicker">A LINE FOR TWO</p><h1 id="home-title">Two people.<br>One quiet line.</h1><p class="lede">Compare. Connect. Say your piece.</p><button id="create" class="primary">Create a conversation <span aria-hidden="true">↗</span></button>
+      <details class="join-disclosure"><summary>Have an invite?</summary><form id="join-form" autocomplete="off"><label for="join-input">Paste the complete invite link</label><input id="join-input" type="text" maxlength="256" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="http://127.0.0.1:4816/#s=…"><button class="secondary" type="submit">Join conversation</button></form></details>
+    </div><figure class="glassbox-figure"><div id="illustration" class="illustration"></div><figcaption>Message text stays at the endpoints.<br>The relay still sees metadata.</figcaption></figure>
+    <p class="home-note">End-to-end encrypted over a local relay.<br>No accounts. No app-saved history. Not direct P2P.</p>
+  </section>
+
+  <section id="waiting" class="stage narrow" hidden aria-labelledby="waiting-title">
+    <div class="session-glassbox pending-glassbox"><div class="session-mark" data-glass-state="dim" aria-hidden="true"></div><span class="glass-state-label">Not live · compare again</span></div>
+    <p class="kicker">ONE PLACE LEFT</p><h2 id="waiting-title">Send the invite.<br>Meet here.</h2><p class="lede">Share privately with one person.</p>
+    <div id="invite-box"><label for="invite">One-use conversation invite</label><input id="invite" readonly autocomplete="off" spellcheck="false"><button id="copy-invite" class="primary">Copy invite</button><p class="quiet">Anyone with this link can join. Sharing apps and clipboard managers may keep it.</p></div>
+    <p id="waiting-status" class="status" role="status">Preparing the encrypted session…</p>
+  </section>
+
+  <section id="verification" class="stage narrow" hidden aria-labelledby="verify-title">
+    <div class="session-glassbox pending-glassbox"><div class="session-mark" data-glass-state="dim" aria-hidden="true"></div><span class="glass-state-label">Not live · compare again</span></div>
+    <p class="kicker">INVITE AUTHENTICATED · PERSON NOT YET CHECKED</p><h2 id="verify-title">Same line?<br>Compare it.</h2><p class="lede">Compare every group in person or on a trusted call—not in this chat.</p>
+    <label for="fingerprint">This session’s full 256-bit fingerprint</label><output id="fingerprint" class="fingerprint"></output><button id="copy-fingerprint" class="text-button">Copy full fingerprint</button>
+    <form id="verify-form" autocomplete="off"><label for="peer-fingerprint">Paste or type their full fingerprint</label><textarea id="peer-fingerprint" rows="2" maxlength="100" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="All 64 hexadecimal characters"></textarea><div class="actions"><button id="verify" class="primary" type="submit">Compare & unlock</button><button id="mismatch" class="text-button danger" type="button">They don’t match</button></div></form>
+    <dl class="verification-ledger"><div class="verification-row"><dt>This device</dt><dd id="local-comparison">Not compared</dd></div><div class="verification-row"><dt>Other device</dt><dd id="remote-comparison">Not compared</dd></div></dl>
+    <p id="verification-status" class="status" role="status">Sending stays locked until both devices compare.</p>
+  </section>
+
+  <section id="chat" class="stage chat" hidden aria-labelledby="chat-title">
+    <div class="chat-heading"><div><p class="kicker">COMPARED ON THIS DEVICE</p><h2 id="chat-title">You’re connected.</h2></div><div class="session-glassbox"><div class="session-mark" data-glass-state="dim" aria-hidden="true"></div><span class="glass-state-label">Not live · compare again</span></div></div>
+    <div id="message-seal" class="message-seal" aria-hidden="true"></div>
+    <span class="route">E2EE / LOCAL RELAY</span>
+    <p class="quiet">Only this session. Your device and the other participant can still keep copies.</p>
+    <ol id="messages" class="messages" aria-label="Conversation" aria-live="polite" aria-relevant="additions"></ol><p id="empty-chat" class="empty-chat">A fresh page.<br>Say hello.</p>
+    <form id="message-form" autocomplete="off"><label for="message">Your message</label><div class="composer"><textarea id="message" rows="2" maxlength="4096" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Write something…" disabled></textarea><button id="send" class="primary" type="submit" disabled>Send <span aria-hidden="true">↗</span></button></div><p class="quiet composer-foot"><span id="byte-count">0 / 4096 bytes</span><span>Enter sends · Shift+Enter adds a line</span></p></form>
+    <details id="wire-details" class="wire"><summary>Inspect the encrypted wire</summary><p>The browser’s actual outgoing record, before the relay. Not a server receipt or proof of retention. The relay sees room, roles, IPs, time and size—not message text under this prototype’s assumptions.</p><pre id="wire-record">No chat record sent yet.</pre></details>
+  </section>
+
+  <section id="ended" class="stage narrow" hidden aria-labelledby="ended-title"><div class="session-glassbox ended-glassbox"><div class="session-mark" data-glass-state="dim" aria-hidden="true"></div><span class="glass-state-label">Not live · compare again</span></div><p class="kicker">SENDING IS BLOCKED</p><h2 id="ended-title">This line<br>is closed.</h2><p id="end-reason" class="lede">Start fresh and compare again.</p><button id="restart" class="primary">Start a new conversation <span aria-hidden="true">↗</span></button></section>
+  <p id="notice" class="notice" role="status" aria-live="polite"></p>
+  <div class="session-tools" id="session-tools" hidden><button id="clear" class="text-button">Clear this device</button><span class="quiet">15-minute session limit</span></div>
+</main>
+<div id="connected-moment" class="connected-moment" hidden aria-hidden="true"></div>
+<p id="connected-announcement" class="visually-hidden" role="status" aria-live="polite" aria-atomic="true"></p>
+<footer><span>Encryption has a boundary.</span><details id="boundaries"><summary>Know what’s outside it</summary><div class="boundary-copy"><h3>A prototype. Not a promise.</h3><p>This is an unaudited composition of a Noise NNpsk0 handshake and libsodium secretstream records. Use an established audited messenger for sensitive conversations.</p><p><strong>Devices still matter.</strong> Malicious delivered code, extensions, your OS, organizational monitoring and the recipient may see plaintext. This app does not measure endpoint integrity.</p><p><strong>The relay still sees metadata.</strong> Connection IPs, room association, roles, timing and message-size buckets remain visible. Encryption is not anonymity. This version uses a local WebSocket relay, not WebRTC P2P or TURN.</p><p><strong>Clearing is local and best effort.</strong> No app history, telemetry or plaintext is deliberately persisted. Clearing stops the worker and removes this transcript; it cannot erase copies, screenshots, clipboard history, swap or browser/OS memory. No forensic zeroization or post-compromise recovery is promised.</p><p><strong>Local only.</strong> HTTP/WS is restricted to loopback. Do not expose this server to a LAN or the internet. The invite is stripped from the URL after import, but sharing apps or browser history may already have retained it.</p></div></details></footer>
+<dialog id="clear-dialog" aria-labelledby="clear-title"><h2 id="clear-title">Clear this device?</h2><p>This closes the session and removes this transcript. It cannot erase your peer’s copies or browser/OS remnants.</p><div class="actions"><button id="confirm-clear" class="primary">Clear & close</button><button id="cancel-clear" class="secondary">Cancel</button></div></dialog>
+<noscript>Glassbox requires JavaScript and a local trusted browser. No chat connection has been started.</noscript>
+</body>
+</html>

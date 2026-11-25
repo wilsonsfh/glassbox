@@ -1,0 +1,75 @@
+2026-11-25T15:21:29+00:00
+
+=== 127.0.0.1 normal GET / ===
+HTTP/1.1 200 OK
+Content-Security-Policy: default-src 'none'; script-src 'sha256-ntjM5OefMxslMFCL3m57Ez1V8tdimi0ReUuSMQe098Q='; style-src http://127.0.0.1:5816/style.css; img-src 'self'; connect-src ws://127.0.0.1:5816; worker-src http://127.0.0.1:5816/vendor/session-worker.js; base-uri 'none'; object-src 'none'; frame-ancestors 'none'; form-action 'none'; require-trusted-types-for 'script'; trusted-types glassbox-worker
+Cross-Origin-Opener-Policy: same-origin
+Cross-Origin-Resource-Policy: same-origin
+Referrer-Policy: no-referrer
+Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Cache-Control: no-store
+Pragma: no-cache
+Content-Type: text/html; charset=utf-8
+Content-Length: 8163
+Date: Wed, 25 Nov 2026 15:21:29 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+
+=== 127.0.0.1 cross-site document navigation GET / ===
+HTTP/1.1 403 Forbidden
+Content-Security-Policy: default-src 'none'; script-src 'sha256-ntjM5OefMxslMFCL3m57Ez1V8tdimi0ReUuSMQe098Q='; style-src http://127.0.0.1:5816/style.css; img-src 'self'; connect-src ws://127.0.0.1:5816; worker-src http://127.0.0.1:5816/vendor/session-worker.js; base-uri 'none'; object-src 'none'; frame-ancestors 'none'; form-action 'none'; require-trusted-types-for 'script'; trusted-types glassbox-worker
+Cross-Origin-Opener-Policy: same-origin
+Cross-Origin-Resource-Policy: same-origin
+Referrer-Policy: no-referrer
+Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Cache-Control: no-store
+Pragma: no-cache
+Content-Type: text/plain; charset=utf-8
+Date: Wed, 25 Nov 2026 15:21:29 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Transfer-Encoding: chunked
+
+Forbidden
+
+=== localhost normal GET / ===
+HTTP/1.1 200 OK
+Content-Security-Policy: default-src 'none'; script-src 'sha256-ntjM5OefMxslMFCL3m57Ez1V8tdimi0ReUuSMQe098Q='; style-src http://localhost:5816/style.css; img-src 'self'; connect-src ws://localhost:5816; worker-src http://localhost:5816/vendor/session-worker.js; base-uri 'none'; object-src 'none'; frame-ancestors 'none'; form-action 'none'; require-trusted-types-for 'script'; trusted-types glassbox-worker
+Cross-Origin-Opener-Policy: same-origin
+Cross-Origin-Resource-Policy: same-origin
+Referrer-Policy: no-referrer
+Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Cache-Control: no-store
+Pragma: no-cache
+Content-Type: text/html; charset=utf-8
+Content-Length: 8163
+Date: Wed, 25 Nov 2026 15:21:29 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+
+=== localhost cross-site document navigation GET / ===
+HTTP/1.1 403 Forbidden
+Content-Security-Policy: default-src 'none'; script-src 'sha256-ntjM5OefMxslMFCL3m57Ez1V8tdimi0ReUuSMQe098Q='; style-src http://localhost:5816/style.css; img-src 'self'; connect-src ws://localhost:5816; worker-src http://localhost:5816/vendor/session-worker.js; base-uri 'none'; object-src 'none'; frame-ancestors 'none'; form-action 'none'; require-trusted-types-for 'script'; trusted-types glassbox-worker
+Cross-Origin-Opener-Policy: same-origin
+Cross-Origin-Resource-Policy: same-origin
+Referrer-Policy: no-referrer
+Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+Cache-Control: no-store
+Pragma: no-cache
+Content-Type: text/plain; charset=utf-8
+Date: Wed, 25 Nov 2026 15:21:29 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Transfer-Encoding: chunked
+
+Forbidden

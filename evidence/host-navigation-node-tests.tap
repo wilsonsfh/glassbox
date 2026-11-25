@@ -1,0 +1,196 @@
+TAP version 13
+# Subtest: independent Cacophony known-answer vector: both flights, payloads, full hash and directions
+ok 1 - independent Cacophony known-answer vector: both flights, payloads, full hash and directions
+  ---
+  duration_ms: 104.573862
+  type: 'test'
+  ...
+# Subtest: known Noise transport nonce wrap is reproduced and transport is forbidden in app source
+ok 2 - known Noise transport nonce wrap is reproduced and transport is forbidden in app source
+  ---
+  duration_ms: 5.33791
+  type: 'test'
+  ...
+# Subtest: invite is exactly 32 random bytes, canonical base64url, independent route and PSK
+ok 3 - invite is exactly 32 random bytes, canonical base64url, independent route and PSK
+  ---
+  duration_ms: 12.915325
+  type: 'test'
+  ...
+# Subtest: no pre-verification send; both full fingerprints must be compared
+ok 4 - no pre-verification send; both full fingerprints must be compared
+  ---
+  duration_ms: 31.201898
+  type: 'test'
+  ...
+# Subtest: bidirectional unicode, text-only hostile markup and 256-byte size buckets
+ok 5 - bidirectional unicode, text-only hostile markup and 256-byte size buckets
+  ---
+  duration_ms: 22.007783
+  type: 'test'
+  ...
+# Subtest: wrong invite PSK fails even when routed into the expected room
+ok 6 - wrong invite PSK fails even when routed into the expected room
+  ---
+  duration_ms: 11.253849
+  type: 'test'
+  ...
+# Subtest: wrong prologue / room fails authenticated handshake
+ok 7 - wrong prologue / room fails authenticated handshake
+  ---
+  duration_ms: 14.490333
+  type: 'test'
+  ...
+# Subtest: tamper fails closed and emits no plaintext
+ok 8 - tamper fails closed and emits no plaintext
+  ---
+  duration_ms: 42.098919
+  type: 'test'
+  ...
+# Subtest: replay is rejected before a duplicate is displayed
+ok 9 - replay is rejected before a duplicate is displayed
+  ---
+  duration_ms: 16.240377
+  type: 'test'
+  ...
+# Subtest: reordering / dropped interior record is rejected
+ok 10 - reordering / dropped interior record is rejected
+  ---
+  duration_ms: 19.024702
+  type: 'test'
+  ...
+# Subtest: role confusion and reflected record fail closed
+ok 11 - role confusion and reflected record fail closed
+  ---
+  duration_ms: 21.369086
+  type: 'test'
+  ...
+# Subtest: direction cannot be relabelled to authenticate its sender own stream
+ok 12 - direction cannot be relabelled to authenticate its sender own stream
+  ---
+  duration_ms: 17.222653
+  type: 'test'
+  ...
+# Subtest: room, session, kind and extra-field substitution are blocked
+ok 13 - room, session, kind and extra-field substitution are blocked
+  ---
+  duration_ms: 57.043141
+  type: 'test'
+  ...
+# Subtest: header substitution prevents mutual key confirmation
+ok 14 - header substitution prevents mutual key confirmation
+  ---
+  duration_ms: 22.54807
+  type: 'test'
+  ...
+# Subtest: partial fingerprint or mismatch aborts rather than granting a comparison badge
+ok 15 - partial fingerprint or mismatch aborts rather than granting a comparison badge
+  ---
+  duration_ms: 26.524775
+  type: 'test'
+  ...
+# Subtest: key-change flight is blocked; reconnect gives a fresh fingerprint and resets verification
+ok 16 - key-change flight is blocked; reconnect gives a fresh fingerprint and resets verification
+  ---
+  duration_ms: 31.088263
+  type: 'test'
+  ...
+# Subtest: authenticated FINAL ends the session; no future records accepted
+ok 17 - authenticated FINAL ends the session; no future records accepted
+  ---
+  duration_ms: 17.109885
+  type: 'test'
+  ...
+# Subtest: message bounds count UTF-8 bytes and do not consume a sequence for invalid input
+ok 18 - message bounds count UTF-8 bytes and do not consume a sequence for invalid input
+  ---
+  duration_ms: 14.588178
+  type: 'test'
+  ...
+# Subtest: pinned sodium lifetime limitation is explicitly asserted
+ok 19 - pinned sodium lifetime limitation is explicitly asserted
+  ---
+  duration_ms: 0.678805
+  type: 'test'
+  ...
+# Subtest: two actual network peers: authenticate, compare, exchange encrypted text, clean FINAL
+ok 20 - two actual network peers: authenticate, compare, exchange encrypted text, clean FINAL
+  ---
+  duration_ms: 337.206925
+  type: 'test'
+  ...
+# Subtest: third peer is rejected; disconnect resets comparison; same invite cannot reuse session keys
+ok 21 - third peer is rejected; disconnect resets comparison; same invite cannot reuse session keys
+  ---
+  duration_ms: 152.760282
+  type: 'test'
+  ...
+# Subtest: localhost and 127.0.0.1 serve the shell and every public asset for GET and HEAD
+ok 22 - localhost and 127.0.0.1 serve the shell and every public asset for GET and HEAD
+  ---
+  duration_ms: 63.658682
+  type: 'test'
+  ...
+# Subtest: safe cross-site GET and HEAD document navigation reaches only the public root shell
+ok 23 - safe cross-site GET and HEAD document navigation reaches only the public root shell
+  ---
+  duration_ms: 7.358362
+  type: 'test'
+  ...
+# Subtest: navigation exception does not admit cross-site fetches, embeds, assets, health or API paths
+ok 24 - navigation exception does not admit cross-site fetches, embeds, assets, health or API paths
+  ---
+  duration_ms: 78.681472
+  type: 'test'
+  ...
+# Subtest: safe-navigation metadata never bypasses exact Host, Origin or forwarded-host defenses
+ok 25 - safe-navigation metadata never bypasses exact Host, Origin or forwarded-host defenses
+  ---
+  duration_ms: 48.837616
+  type: 'test'
+  ...
+# Subtest: WebSocket origin remains required and exactly bound to Host regardless of navigation metadata
+ok 26 - WebSocket origin remains required and exactly bound to Host regardless of navigation metadata
+  ---
+  duration_ms: 43.202122
+  type: 'test'
+  ...
+# Subtest: Host, Origin, fetch-site, methods, paths and non-served test internals are guarded
+ok 27 - Host, Origin, fetch-site, methods, paths and non-served test internals are guarded
+  ---
+  duration_ms: 19.8169
+  type: 'test'
+  ...
+# Subtest: strict script CSP, SRI, opener/referrer/cache headers are emitted
+ok 28 - strict script CSP, SRI, opener/referrer/cache headers are emitted
+  ---
+  duration_ms: 8.874952
+  type: 'test'
+  ...
+# Subtest: oversized frame closes the pair without allowing continuation
+ok 29 - oversized frame closes the pair without allowing continuation
+  ---
+  duration_ms: 70.103322
+  type: 'test'
+  ...
+# Subtest: role-spoofed frames close both sockets at the relay
+ok 30 - role-spoofed frames close both sockets at the relay
+  ---
+  duration_ms: 60.335031
+  type: 'test'
+  ...
+# Subtest: per-socket rate limit closes a flood instead of retaining a queue
+ok 31 - per-socket rate limit closes a flood instead of retaining a queue
+  ---
+  duration_ms: 57.005568
+  type: 'test'
+  ...
+1..31
+# tests 31
+# suites 0
+# pass 31
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1243.271972

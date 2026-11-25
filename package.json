@@ -1,0 +1,23 @@
+{
+  "name": "glassbox-prototype",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Unaudited plain-local two-peer encrypted relay chat prototype",
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs --port 4816",
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check.mjs",
+    "test": "node --test tests/core.test.mjs tests/relay.test.mjs"
+  },
+  "engines": { "node": ">=22" },
+  "license": "ISC",
+  "dependencies": {
+    "esbuild": "0.25.12",
+    "libsodium": "0.8.4",
+    "libsodium-wrappers": "0.8.4",
+    "noise-handshake": "4.2.1",
+    "sodium-javascript": "0.8.0",
+    "ws": "8.23.0"
+  }
+}

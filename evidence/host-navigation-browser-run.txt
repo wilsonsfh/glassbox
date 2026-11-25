@@ -1,0 +1,17 @@
+PASS: localhost: real cross-site document GET returns 200
+PASS: localhost: browser emits cross-site/navigate/document
+PASS: localhost: no Origin on ordinary anchor GET
+PASS: localhost: rendered app shell, not Forbidden
+PASS: localhost: same-origin asset /app.js loads
+PASS: localhost: same-origin asset /style.css loads
+PASS: localhost: no CORS allow-origin response
+PASS: 127.0.0.1: real cross-site document GET returns 200
+PASS: 127.0.0.1: browser emits cross-site/navigate/document
+PASS: 127.0.0.1: no Origin on ordinary anchor GET
+PASS: 127.0.0.1: rendered app shell, not Forbidden
+PASS: 127.0.0.1: same-origin asset /app.js loads
+PASS: 127.0.0.1: same-origin asset /style.css loads
+PASS: 127.0.0.1: no CORS allow-origin response
+PASS: no browser page errors
+PASS: no browser console errors
+PASS: no CSP violations

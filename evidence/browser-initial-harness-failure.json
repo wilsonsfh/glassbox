@@ -1,0 +1,21 @@
+{
+  "checks": [],
+  "screenshots": [],
+  "page_errors": [],
+  "console_errors": [
+    {
+      "page": "creator",
+      "text": "This document requires 'TrustedScript' assignment. The action has been blocked."
+    }
+  ],
+  "csp_violations": [],
+  "requests": [
+    "http://127.0.0.1:5816/",
+    "http://127.0.0.1:5816/app.js",
+    "http://127.0.0.1:5816/favicon.svg",
+    "http://127.0.0.1:5816/style.css",
+    "http://127.0.0.1:5816/vendor/session-worker.js"
+  ],
+  "server_log": "Glassbox prototype \u2014 http://127.0.0.1:5816 \u2014 local relay only",
+  "server_errors": ""
+}
