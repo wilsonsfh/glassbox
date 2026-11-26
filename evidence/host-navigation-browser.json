@@ -1,7 +1,7 @@
 {
   "timestamp": "2026-11-25T15:49:47.331210+00:00",
   "environment": "Linux sandbox; Chromium /usr/bin/chromium --no-sandbox; exclusive /tmp/chrome.lock",
-  "scope": "Real cross-site top-level anchor navigation into the app shell; not Mac, Manus production or full chat QA",
+  "scope": "Real cross-site top-level anchor navigation into the app shell; not Mac, Client production or full chat QA",
   "checks": [
     "localhost: real cross-site document GET returns 200",
     "localhost: browser emits cross-site/navigate/document",

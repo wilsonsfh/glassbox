@@ -16,7 +16,7 @@ EVIDENCE = ROOT / 'evidence'
 REPORT = {
     'timestamp': datetime.now(timezone.utc).isoformat(),
     'environment': 'Linux sandbox; Chromium /usr/bin/chromium --no-sandbox; exclusive /tmp/chrome.lock',
-    'scope': 'Real cross-site top-level anchor navigation into the app shell; not Mac, Manus production or full chat QA',
+    'scope': 'Real cross-site top-level anchor navigation into the app shell; not Mac, Client production or full chat QA',
     'checks': [], 'navigations': [], 'page_errors': [], 'console_errors': [], 'csp_violations': [],
 }
 

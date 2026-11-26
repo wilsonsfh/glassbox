@@ -1,4 +1,4 @@
-# Glassbox
+# glassbox
 
 A two-person, ephemeral encrypted-chat **prototype**. It is not audited and should not be used for sensitive conversations. This version is application-layer E2EE over a **local WebSocket relay**, not WebRTC P2P.
 

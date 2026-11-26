@@ -6,7 +6,7 @@ Verified on **2026-11-25**, Linux cloud sandbox, Node 22, loopback test port **5
 
 Wilson reported a `Forbidden` page. The lead and this fix pass independently reproduced a specific server defect: plain `GET /` returned **200** for both `localhost:5816` and `127.0.0.1:5816`, but the same request with `Sec-Fetch-Site: cross-site`, `Sec-Fetch-Mode: navigate`, and `Sec-Fetch-Dest: document` returned **403**. The Host allowlist already explicitly contained `localhost`, `127.0.0.1`, and `[::1]` with the selected port; a missing loopback hostname was not the reproduced cause.
 
-The former HTTP guard rejected every request with `Sec-Fetch-Site: cross-site`, including a normal top-level link to the public app shell. This can explain navigation from a separate Manus/hub site. **Wilson's exact Mac/browser request headers, current Mac server process, and Mac resolution are unverified.** Cloud reproduction does not establish that every possible `Forbidden` report has this cause.
+The former HTTP guard rejected every request with `Sec-Fetch-Site: cross-site`, including a normal top-level link to the public app shell. This can explain navigation from a separate Client/hub site. **Wilson's exact Mac/browser request headers, current Mac server process, and Mac resolution are unverified.** Cloud reproduction does not establish that every possible `Forbidden` report has this cause.
 
 Pre-fix evidence: [`host-navigation-before.txt`](../p6-prototype/evidence/host-navigation-before.txt) records both hostnames' 200/403 responses. A test-first regression recorded the expected `403 !== 200` failure in [`host-navigation-regression-before.tap`](../p6-prototype/evidence/host-navigation-regression-before.tap).
 
@@ -52,7 +52,7 @@ flock -x -w 120 /tmp/chrome.lock python3 tests/host-navigation-browser.py
 
 Sync the corrected `server.mjs` and regression files to the target working copy. A running Node process retains the old handler: **restart the intended Q6 process** from that directory, for example `node server.mjs --port 4816` on the documented Mac port. Stop only that known Q6 process, not all Node processes. Restart ends existing in-memory relay sessions, so use a fresh conversation afterward.
 
-Recheck the actual Mac link from Manus/hub after restart. If it is still Forbidden, capture the actual request's Host, Origin, forwarded-host and Fetch Metadata; do not relax those guards or infer a Mac fix from cloud evidence. No Mac deployment, browser compatibility claim, LAN/public exposure or unrelated crypto changes are included in this pass.
+Recheck the actual Mac link from Client/hub after restart. If it is still Forbidden, capture the actual request's Host, Origin, forwarded-host and Fetch Metadata; do not relax those guards or infer a Mac fix from cloud evidence. No Mac deployment, browser compatibility claim, LAN/public exposure or unrelated crypto changes are included in this pass.
 
 ## Browser verification (build lead, 23:36 +08, Sandbox Chromium 1 run under the shared lock)
 `tests/host-navigation-browser.py` ran in real headless Chromium against a fixture page on a different origin that links to `http://localhost:5816/` and `http://127.0.0.1:5816/`. Result: 17 PASS, 0 FAIL. Both real anchor clicks produced `Sec-Fetch-Site: cross-site / Mode: navigate / Dest: document`, no `Origin` header, a 200 with the rendered Glassbox app shell (not "Forbidden"), same-origin assets loaded, no CORS allow-origin header, no console errors, no CSP violations. Log: `analysis/p6-prototype/evidence/host-navigation-browser-run.txt`.

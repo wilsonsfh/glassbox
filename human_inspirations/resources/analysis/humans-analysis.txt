@@ -4,7 +4,7 @@ Task submitted (ID: video-analysis-e5febbf1-e8f5-4e23-b0fa-0222a81be035)
 [5s] Status: Analysis completed
 [5s] Analysis completed!
 Full analysis result saved to: /home/ubuntu/AI-round/_reference/inspo/_inspo/video_humans_analysis_20261125_152335.md
-Note: This tool performs AI-based visual and audio analysis, not verbatim transcription. For detailed speech transcription, use `manus-speech-to-text` instead.
+Note: This tool performs AI-based visual and audio analysis, not verbatim transcription. For detailed speech transcription, use `client-speech-to-text` instead.
 Analysis result:
 
 

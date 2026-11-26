@@ -1,6 +1,6 @@
 # Inspiration notes: humans& anchor (Wilson, 23:12)
 
-Source: `_inspo/huamns&-demo-inspo.MP4` (848x848, 21.6 s). Evidence: AI video analysis at 23:25 (`manus-analyze-video`, saved text below) plus the 2 fps contact sheet `analysis/_inspo/humans-contact-2fps.png` that the lead looked at. The analysis is a model reading of the video, not a measured timing study. The other two videos in the bundle (cognition 93 s, manus2.0 166 s) have NOT been analysed yet; the lottie video was not in the bundle.
+Source: `_inspo/huamns&-demo-inspo.MP4` (848x848, 21.6 s). Evidence: AI video analysis at 23:25 (`client-analyze-video`, saved text below) plus the 2 fps contact sheet `analysis/_inspo/humans-contact-2fps.png` that the lead looked at. The analysis is a model reading of the video, not a measured timing study. The other two videos in the bundle (cognition 93 s, client2.0 166 s) have NOT been analysed yet; the lottie video was not in the bundle.
 
 ## What the video does (3 beats, hard cuts between them)
 1. 0-4 s: a painterly classroom (chalkboard, books, an orange persimmon) with a pale-sage ampersand mascot wearing round glasses. It does not fade in. It resolves through a patchy block/mosaic dissolve, like paint settling on a canvas (the contact sheet shows ragged patches of the next picture appearing).
@@ -39,4 +39,4 @@ Seen via contact sheet `analysis/_inspo/train-contact.png` (not a full playback)
 - Every graphic must reflect its own product; no generic or stock images; refinement pass, not a redesign.
 - Renames: Q1 Mouthpiece, Q2 Cabo, Q5 Terminal Boss, Q6 Glassbox.
 - Keep the raw monitor on :4777; restyle dashboard/public to the Hub design kit via a Sandbox sub-agent, low priority.
-- Q8 storyboard draft (Coordinator, `_reference/q5-train/coordinator/Q8-STORYBOARD.md`): voice (Q1) -> terminal MCP (Q5) -> Cabo game + celebration (Q2) -> Architecture Magic (Q7) -> TRACE flight (Q4) -> clouds -> Glassbox (Q6); anchor humans&.
+- Q8 storyboard draft (Coordinator, `_reference/q5-train/coordinator/Q8-STORYBOARD.md`): voice (Q1) -> terminal MCP (Q5) -> Cabo game + celebration (Q2) -> Architecture Relive (Q7) -> TRACE flight (Q4) -> clouds -> Glassbox (Q6); anchor humans&.

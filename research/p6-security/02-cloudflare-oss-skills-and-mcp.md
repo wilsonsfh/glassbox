@@ -2,9 +2,9 @@
 
 Evidence checked on **25 November 2026**. Scope: Glassbox’s two-person, ephemeral browser chat; a ciphertext-only Worker/Durable Object relay; optional native WebRTC/TURN; no accounts, model access to chats, or content storage. This review read public documentation, repository READMEs, selected source files, licences and repository metadata. It did not install, clone, execute upstream code, authenticate to Cloudflare or deploy anything.
 
-## 1. What is actually available in this Manus task
+## 1. What is actually available in this Client task
 
-The requested read-only command, `manus-config connector search cloudflare`, returned:
+The requested read-only command, `client-config connector search cloudflare`, returned:
 
 | Catalogue entry | Enabled | Known accounts / agent-authorized accounts | Meaning |
 | --- | --- | --- | --- |
@@ -12,9 +12,9 @@ The requested read-only command, `manus-config connector search cloudflare`, ret
 | Cloudflare API | false | none / none | Listed, but no account authorization or active account. |
 | Cloudflare Worker Bindings | false | none / none | Listed, but no account authorization or active account. |
 
-`command -v manus-mcp-cli` found no executable. The existing Manus utilities directory also contained no `manus-mcp-cli`. Read-only MCP server discovery listed only `manus-tools` and `exa`, **not Cloudflare**. No connector was created, enabled or authorized, and no Cloudflare account tool was called. This is a session snapshot, not a claim that Manus lacks Cloudflare integrations generally.
+`command -v client-mcp-cli` found no executable. The existing Client utilities directory also contained no `client-mcp-cli`. Read-only MCP server discovery listed only `client-tools` and `exa`, **not Cloudflare**. No connector was created, enabled or authorized, and no Cloudflare account tool was called. This is a session snapshot, not a claim that Client lacks Cloudflare integrations generally.
 
-The [recommended API MCP](https://github.com/cloudflare/mcp) needs Cloudflare OAuth authorization with selected permissions, or a scoped API bearer token. Both user and account tokens are supported; account-token auto-detection additionally needs `Account Resources : Read`. An operational integration should grant only the necessary read permissions and constrain approved endpoints/accounts; general `execute` capability is not intrinsically read-only. The precise Manus catalogue entry’s login flow and effective scopes were **not exercised**.
+The [recommended API MCP](https://github.com/cloudflare/mcp) needs Cloudflare OAuth authorization with selected permissions, or a scoped API bearer token. Both user and account tokens are supported; account-token auto-detection additionally needs `Account Resources : Read`. An operational integration should grant only the necessary read permissions and constrain approved endpoints/accounts; general `execute` capability is not intrinsically read-only. The precise Client catalogue entry’s login flow and effective scopes were **not exercised**.
 
 The [standalone documentation MCP](https://github.com/cloudflare/mcp-server-cloudflare/tree/main/apps/docs-ai-search) explicitly requires **neither authentication nor OAuth**, at `https://docs.mcp.cloudflare.com/mcp`. It is not configured here. Public docs can already be retrieved over HTTP without enabling a connector. Only non-sensitive documentation questions belong in a docs MCP: its implementation sends searches to Cloudflare AI Search, not an offline local index.
 

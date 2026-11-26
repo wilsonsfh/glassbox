@@ -1,6 +1,6 @@
 # R4 — Zscaler: enterprise-network boundaries for Glassbox
 
-Verified 25 November 2026. Author: Manus AI. Glassbox is a proposal, not a built or tested application.
+Verified 25 November 2026. Author: Client AI. Glassbox is a proposal, not a built or tested application.
 
 ## TLS inspection and WebSocket content
 

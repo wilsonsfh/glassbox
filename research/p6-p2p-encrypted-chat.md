@@ -9,7 +9,7 @@ Build a two-person ephemeral chat, not a new Signal. Demonstrate a real conversa
 | Product taste | Calm chat, usable verification, progressively disclosed inspection—not a cryptography dashboard imposed on every message. |
 | Implementation/debugging | Two isolated contexts exchange messages; corruption fails; reproduce a key-direction bug and fix it with a test. |
 | Architecture | Separate application encryption, transport, identity, routing, key lifetime and delivery. |
-| AI efficiency | Give Manus bounded adapters and acceptance tests; never ask it to invent a secure protocol. |
+| AI efficiency | Give Client bounded adapters and acceptance tests; never ask it to invent a secure protocol. |
 | Prioritization | Encrypted relay loop, then P2P, then evidence panel. Cut accounts, groups and attachments. |
 | Security/boundaries | Expose metadata, invite leakage and hostile JavaScript delivery. Encryption is not anonymity or absolute security. |
 
@@ -80,7 +80,7 @@ Fresh DH plus deletion protects earlier captured ciphertext under stated assumpt
 
 Explain direct peer-IP disclosure. “Hide IP from peer” chooses `iceTransportPolicy:'relay'` before ICE gathering, or WSS without starting WebRTC; infrastructure still sees IPs.[21] [22] TURN is optional, with server-minted short-lived credentials and no long-term token in the client.[23]
 
-**Infrastructure:** Cloudflare Worker plus one Durable Object per opaque room: inspectable relay, deterministic routing, two-socket admission and real tests, without buying an always-on VM. Hibernation resets memory; reconstruct sockets using `getWebSockets()` and minimal role/expiry attachments.[24] Persist at most expiry/burn-tombstone metadata, never chat, SDP or debug captures. Apply Origin checks, frame/connection caps and pre-DO rate limits; these limit abuse, not authenticate identity. Prefer this over undocumented Manus-hosting WebSocket assumptions.
+**Infrastructure:** Cloudflare Worker plus one Durable Object per opaque room: inspectable relay, deterministic routing, two-socket admission and real tests, without buying an always-on VM. Hibernation resets memory; reconstruct sockets using `getWebSockets()` and minimal role/expiry attachments.[24] Persist at most expiry/burn-tombstone metadata, never chat, SDP or debug captures. Apply Origin checks, frame/connection caps and pre-DO rate limits; these limit abuse, not authenticate identity. Prefer this over undocumented Client-hosting WebSocket assumptions.
 
 **Rejected alternatives:** WebCrypto X25519/HKDF/AES-GCM reduces dependencies; mainstream support improved, while older browsers need separately specified, transcript-bound P-256—not silent downgrade.[25] Ed25519 signs, not key exchange.[26] AES-GCM requires nonce uniqueness. Primitives do not supply a chat protocol: reject a homemade Double Ratchet. Standard libsodium wrappers include secretstream without Sumo’s broader low-level surface.[27] Matrix/Signal add device/key-distribution scope; PeerJS does not remove authentication work.
 
@@ -146,7 +146,7 @@ Apply `build-principles › Thin slices/Test first/Time discipline` and poteto: 
 
 **90 seconds:** 0–15 create/join isolated contexts; 15–30 compare and send; 30–45 show direct stats/no chat at relay; 45–65 fresh labelled relay-proof session, exact receipt and attack rejection; 65–80 changed-session send block and local burn; 80–90 Boundaries: metadata and malicious-delivery assumptions. Simulator is labelled and exercises the normal decrypt path.
 
-## 8. Manus leverage
+## 8. Client leverage
 
 | Invoke/when | Kind | Why |
 | --- | --- | --- |
@@ -184,7 +184,7 @@ Wilson: Can the demo use a second physical device/network? Are scoped Cloudflare
 
 Confidence: high in product/threat boundaries, medium in architecture, low-to-medium in schedule until browser/vector gates pass. No product was built or security-tested in this analysis.
 
-**Devil’s advocate:** an unverified browser adapter plus composed record layer may consume the interview and create security theatre. Answer: first-slice stop/go gate, explicit unaudited status, independent attack evidence—not certification. Real sensitive messaging belongs in an established audited tool.
+**Devil’s advocate:** an unverified browser adapter plus composed record layer may consume the prototype and create security theatre. Answer: first-slice stop/go gate, explicit unaudited status, independent attack evidence—not certification. Real sensitive messaging belongs in an established audited tool.
 
 **Recommendation:** choose Glassbox as the security-judgment flagship only with approximately three hours. First three slices: crypto gate, complete encrypted relay chat, authenticated P2P. Cut groups/accounts/files/short-code pairing/3D/push/persistence. Never cut comparison, negative tests or Boundaries to preserve visual polish.
 
