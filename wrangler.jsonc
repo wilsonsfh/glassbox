@@ -1,0 +1,36 @@
+{
+  "$schema": "https://developers.cloudflare.com/workers/wrangler/config-schema.json",
+  "name": "glassbox",
+  "main": "cloudflare/worker.js",
+  "compatibility_date": "2026-11-24",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "workers_dev": true,
+  "assets": {
+    "directory": "./.cloudflare/site",
+    "binding": "ASSETS",
+    "run_worker_first": [
+      "/relay/*"
+    ]
+  },
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "RELAY",
+        "class_name": "GlassboxRelay"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": [
+        "GlassboxRelay"
+      ]
+    }
+  ],
+  "observability": {
+    "enabled": true
+  }
+}

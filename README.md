@@ -49,3 +49,12 @@ The harness owns its temporary :5816 server, verifies actual browser-generated c
 **Restart required:** sync this server file, then restart only the intended Q6 Node process (`node server.mjs --port 4816` for the documented Mac target). Existing relay sessions end on restart; start a fresh conversation. The precise reported Mac failure and its resolution have not been verified on Mac; the reproduced and fixed defect is the cloud Fetch Metadata guard, not a missing localhost allowlist entry.
 
 Browser verification status at 23:34 +08: **blocked by the shared `/tmp/chrome.lock`** after three bounded waits; Chromium did not launch and no screenshot/browser PASS is claimed. The harness syntax passed. See [structured verification status](evidence/host-navigation-summary.json) and [the final lock log](evidence/host-navigation-browser.log). All owned temporary Q6 test processes are stopped; :5816 is free for a later locked browser rerun.
+
+
+## Cloudflare hosting
+
+Live: https://glassbox.wilsonsoon.workers.dev
+
+The public app uses a native Cloudflare Durable Object WebSocket adapter. Rooms remain ephemeral, matching the prototype; encryption/game logic stays in the original implementation. This remains an unaudited prototype.
+
+Rebuild browser bundles with `npm ci && npm run build`, then build browser assets with `node scripts/build-cloudflare.mjs`, then `wrangler deploy`. The original local Node server remains available.

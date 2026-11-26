@@ -218,12 +218,12 @@
       secret = null;
       if (active !== current) return;
       if (result.invite) $("invite").value = `${location.origin}/#s=${result.invite}`;
-      const socket = current.socket = new WebSocket(`ws://${location.host}/relay/${result.snapshot.room}?role=${role}`);
+      const socket = current.socket = new WebSocket(`${location.protocol === "https:" ? "wss:" : "ws:"}//${location.host}/relay/${result.snapshot.room}?role=${role}`);
       socket.onopen = () => {
         if (active === current) $("waiting-status").textContent = role === "i" ? "Waiting for one person to join\u2026" : "Finding the other endpoint\u2026";
       };
       socket.onerror = () => {
-        if (active === current) finish("The local relay could not admit this connection. The invite may be expired, occupied, or from a different server. Start a new conversation.");
+        if (active === current) finish("The relay could not admit this connection. The invite may be expired, occupied, or from a different server. Start a new conversation.");
       };
       socket.onclose = () => {
         if (active === current) finish("Connection lost without a confirmed close. Sending is blocked; old verification cannot be reused. Start fresh.");

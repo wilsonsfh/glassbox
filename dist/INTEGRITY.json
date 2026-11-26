@@ -1,8 +1,8 @@
 {
   "algorithm": "sha256",
   "files": {
-    "dist/app.js": "946ed15cb6fe5a3c40c536386fedfe8c7366c84b28f1f3352e83b791e03edba7",
-    "dist/index.html": "28a116bcab331f9bce2a5bc7f7a35518e565fef1472eba583617f452c3f3d44c",
+    "dist/app.js": "2f0c14bd6692f468247067ebe20ff3b391d5059c81cc499711b405ba7ece0b71",
+    "dist/index.html": "f8b6cd31d4b2177b5d5cc1313b93811be87f6500eb7431c1f282e51ea68e7b9d",
     "dist/style.css": "3780b6650dc6ef05001b9161b740340c4feb292eb1bb8b4b2126d9e143733cee",
     "dist/favicon.svg": "a27cf1aff1503adbbd8dfcdee496d139a5518368636a683e2ee99863b9101ab1",
     "dist/vendor/session-worker.js": "d3d91df7a3ed68dfc58f46376c0cea9929efa8ee388927f069ebc3e29cb8d5c9",
